@@ -4,9 +4,6 @@ import importlib
 import sys
 from dataset import KittiDataset
 
-
-
-
 sys.path.append("..")
 
 def parse_config():
@@ -40,7 +37,6 @@ def main():
     args = parse_config()
     MODEL = importlib.import_module(args.net)
     model = MODEL.create_model(input_channels=0)
-    
     eval_set = KittiDataset(root_dir='/home/bai/Documents/TJX/Deeplearning/Pointnet2-On-Detection/dataset', mode='EVAL', split='val')
 
 
